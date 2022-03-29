@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+
+		<meta charset="UTF-8">
+
+		<title> Nombre </title>
+
+		<!-- enlace del css-->
+		<link href="style.css" type="text/css" rel="stylesheet">		
+
+
+	</head>
+	<body>
+
+        <button class="redondo" onclick="playVid()" type="button"></button>
+        <button class="redondo2" onclick="pauseVid()" type="button"><img src="imagenes/156706.svg" height ="30" width="35" /></button><br> 
+
+		<video id="myVideo" >
+            <source src="videos/agua.mp4" type="video/mp4">            
+            Your browser does not support HTML5 video.
+        </video>
+
+        <script> 
+            var vid = document.getElementById("myVideo"); 
+            
+            function playVid() { 
+              vid.play(); 
+            } 
+            
+            function pauseVid() { 
+              vid.pause(); 
+            } 
+        </script>        
+	</body>
+</html>
