@@ -1,0 +1,146 @@
+/*Codigo para el body*/
+body{
+    background-color: white;
+    background-position: center; /*posicion*/
+    background-repeat: no-repeat; /*evitar que el fondo se repita en su limite*/
+    background-size: cover;
+    background-attachment: fixed;
+}
+/*Fin del codigo para el body*/
+
+
+/*Codigo para el titulo*/
+#unictitle{
+    color: white; 
+    font-size: 68px; /*tamaño de la fuente*/
+}
+
+.white{
+    color: white;
+}
+
+.fondotitle{
+    background: rgb(226, 43, 43); /*background añade un fondo a un elemento en este caso a un titulo*/
+    margin-bottom: -20px; /*Genera un margen, en este caso quita el margen al ser -*/
+    margin-top: -8px;
+}
+
+.fondosubtitle{
+    background: rgb(226, 43, 43);
+}
+/*Fin del codigo para el titulo*/
+
+
+/*Codigo para nuevos vehiculos*/
+img{
+    transition: all 0.5s ease;
+}
+
+img:hover{
+    transform: scale(0.9);
+}
+
+#tamimg{
+    width: 700px;
+    height: 263;
+    border-radius: 5px;
+}
+
+.margfondocabimg{
+    margin-left: 140px;
+    margin-right: 60px;
+    margin-bottom: 20px; /*Añade un borde o recorde a una img*/
+    box-shadow: 5px 5px 0px gray; /*Crea una sombra con un tamaño y color*/
+}
+
+.centro{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.catactualizado{
+    margin-left: 835px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.centradoavisocomp{
+    margin-left: 600px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+/*Fin codigo para nuevos vehiculos*/
+
+
+/*Codigo para nuevos vehiculos*/
+.ParrafoPrin{
+    color: rgb(0, 0, 0); 
+    font-size: 20px; /*tamaño de la fuente*/
+}
+
+.ParrafoPrinTitu{
+    color: rgb(0, 0, 0); 
+    font-size: 24px; /*tamaño de la fuente*/
+}
+/*Fin codigo para nuevos vehiculos*/
+
+
+/*Separador*/
+#cambiosimgsep{
+    width: 1890px;
+}
+/*Fin del separador*/
+
+/*Catalogo de vehiculos*/
+#imgpubli{
+    width: 600px;
+    height: 263;
+    border-radius: 5px;
+}
+
+.margcatalogovehi{
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-bottom: 40px; /*Añade un borde o recorde a una img*/
+    box-shadow: 5px 5px 0px rgb(201, 23, 23); /*Crea una sombra con un tamaño y color*/
+    background:white;
+    padding: 20px;
+}
+/**/
+
+
+/*Links*/
+.columtitle{
+    background: #ff003c;
+    color: white;
+    padding: 20px;
+    width: 25%;
+    margin: 10px;
+    margin-left: 70px;
+    margin-right: 30px;
+}
+
+.columna{
+    background: rgb(148, 148, 148);
+    color: white;
+    padding: 20px;
+    width: 25%;
+    margin: 10px;
+    margin-left: 70px;
+    margin-right: 30px;
+}
+.padre{
+    display: flex;
+}
+
+.colorLink{
+    color: white;
+}    
+
+nav{
+    background: #ff003c;
+    color: white;
+    padding: 20px;
+}
+/*Fin de links*/

@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informa Tu Voto</title>
+    <title>Document</title>
     <script src="./library/p5.js"></script>
     <script src="./controller.js"></script>
-    <link href="style.css" type="text/css" rel="stylesheet">	
     
 </head>
-<body>
-    <a href="https://twitter.com/intent/tweet?text=Conoce%20al%20candidato%20a%20la%20presidencia%20Gustavo%20Petro&hashtags=ExperienciaUAO" target="_blank"><img src="../imagenes/Twitter.png" class="twitter" /></a>
-    <a href="https://api.whatsapp.com/send?text=Conoce%20al%20candidato%20a%20la%20presidencia%20Gustavo%20Petro&hashtags=ExperienciaUAO" target="_blank"><img src="../imagenes/WappBotton.png" class="whatsapp" /></a>
+<body class="centro">
+    <a href="https://twitter.com/intent/tweet?text=Conoce%20al%20candidato%20a%20la%20presidencia%20Gustavo%20Petro&hashtags=ExperienciaUAO" target="_blank"><img src="../imagenes/Twitter.png" height ="80" width="85" /></a>
+    <a href="https://api.whatsapp.com/send?text=Conoce%20al%20candidato%20a%20la%20presidencia%20Gustavo%20Petro&hashtags=ExperienciaUAO" target="_blank"><img src="../imagenes/WappBotton.png" height ="80" width="85" /></a>
     <!--<a href="https://api.whatsapp.com/send?text=escola%20inform%C3%A1tica%20i%20disseny%20https://espai.es">Compartir en Whatsapp</a>-->
-    <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank"><img src="../imagenes/Facebotton.png" class="facebook"/></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank"><img src="../imagenes/Facebotton.png" height ="80" width="85" /></a>
     <!--<a href="https://www.facebook.com/sharer/sharer.php?u=https://espai.es">Comparte en Facebook</a>-->
 
     <button class="redondo" onclick="playVid()" type="button"><img src="../imagenes/play.png" height ="30" width="35" /></button><br>
@@ -22,4 +21,37 @@
 </body>
 </html>
 
+<style>*
+/*Centrar de forma automatica*/
+.centro{
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    /*
+    Intento de autoajustable
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    */
+}
 
+.redondo{
+    position: absolute;
+    z-index: 3;
+    margin-top: 34rem;
+    margin-left: 75rem;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+}
+
+.redondo2{
+    position: absolute;
+    z-index: 2;
+    margin-top: 34rem;
+    margin-left: 6.75rem;
+    width: 74px;
+    height: 75px;
+    border-radius: 50%;
+    
+}
