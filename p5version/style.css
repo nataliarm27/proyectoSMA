@@ -1,0 +1,47 @@
+.redondo{
+    position: absolute;
+    z-index: 3;
+    margin-top: 34rem;
+    margin-left: 35rem;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+}
+
+.redondo2{
+    position: absolute;
+    z-index: 2;
+    margin-top: 34rem;
+    margin-left: 6.75rem;
+    width: 74px;
+    height: 75px;
+    border-radius: 50%;
+    
+}
+
+.facebook{
+    position: absolute;
+    z-index: 3;
+    margin-top: 44rem;
+    margin-left: 62rem;
+    align-items: flex-end;
+    width: 3rem;
+}
+
+.whatsapp{
+    position: absolute;
+    z-index: 3;
+    margin-top: 44rem;
+    margin-left: 66rem;
+    align-items: flex-end;
+    width: 3rem;
+}
+
+.twitter{
+    position: absolute;
+    z-index: 3;
+    margin-top: 44rem;
+    margin-left: 58rem;
+    align-items: flex-end;
+    width: 3rem;
+}

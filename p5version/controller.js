@@ -15,15 +15,15 @@ let v1,v2,v3,v4,v5;
 
 function preload() {
     video_1 = createVideo(_video_1);
-    video_1.volume(0);
+    video_1.volume(1);
     video_2 = createVideo(_video_2);
-    video_2.volume(0);
+    video_2.volume(1);
     video_3 = createVideo(_video_3);
-    video_3.volume(0);
+    video_3.volume(1);
     video_4 = createVideo(_video_4);
-    video_4.volume(0);
+    video_4.volume(1);
     video_5 = createVideo(_video_5);
-    video_5.volume(0);
+    video_5.volume(1);
   
     img = loadImage("./descarga.png");
   }
@@ -202,5 +202,18 @@ function draw() {
   timeLine();
   slider();
 }
+
+var vid = document.getElementById("_video_1"); 
+            
+function playVid() { 
+  vid.play(); 
+} 
+
+function pauseVid() { 
+  vid.pause(); 
+} 
+  
+
+
 
 
