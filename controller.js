@@ -1,8 +1,8 @@
-const _video_1 = "../videos/agua.mp4";
-const _video_2 = "../videos/animales.mp4";
-const _video_3 = "../videos/armas.mp4";
-const _video_4 = "../videos/droga.mp4";
-const _video_5 = "../videos/transporte.mp4";
+const _video_1 = "videos/agua.mp4";
+const _video_2 = "videos/animales.mp4";
+const _video_3 = "videos/armas.mp4";
+const _video_4 = "videos/droga.mp4";
+const _video_5 = "videos/transporte.mp4";
 
 let img;
 let video_1;
@@ -28,7 +28,7 @@ function preload() {
     video_5 = createVideo(_video_5);
     video_5.volume(1);
   
-    img = loadImage("./descarga.png");
+    img = loadImage("descarga.png");
   }
 
 
@@ -38,7 +38,7 @@ function setup() {
     // wd= 1920;
     // hg=1080;
     vidIsPlaying= true;
-   playButton = createImg("../imagenes/PausaBotton.png");   
+   playButton = createImg("imagenes/PausaBotton.png");   
    
     wd = displayWidth;
     hg = displayHeight;
@@ -271,7 +271,7 @@ function playVid() {
     console.log("vidisplayin: "+ vidIsPlaying);
     if(vidIsPlaying){
         video_1.pause(); 
-        playButton = createImg("../imagenes/play.png"); 
+        playButton = createImg("imagenes/play.png"); 
         vidIsPlaying=false;
     }else{
         vidIsPlaying=true;
