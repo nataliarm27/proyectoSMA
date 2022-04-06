@@ -13,17 +13,20 @@ let blocks;
 let leverImg;
 let v1,v2,v3,v4,v5;
 
+let vidIsPlaying;
+let playButton;
+
 function preload() {
     video_1 = createVideo(_video_1);
-    video_1.volume(0);
+    video_1.volume(1);
     video_2 = createVideo(_video_2);
-    video_2.volume(0);
+    video_2.volume(1);
     video_3 = createVideo(_video_3);
-    video_3.volume(0);
+    video_3.volume(1);
     video_4 = createVideo(_video_4);
-    video_4.volume(0);
+    video_4.volume(1);
     video_5 = createVideo(_video_5);
-    video_5.volume(0);
+    video_5.volume(1);
   
     img = loadImage("./descarga.png");
   }
@@ -34,9 +37,13 @@ function setup() {
     background(255, 204, 0);
     // wd= 1920;
     // hg=1080;
-  
+    vidIsPlaying= true;
+   playButton = createImg("../imagenes/PausaBotton.png");   
+   
     wd = displayWidth;
     hg = displayHeight;
+    playButton.position(wd/6+10 , hg- 400);
+    playButton.mousePressed(playPause);
     blocks = [
         { x: wd / 6,                 y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(100, 60, 80)", active: false },
         { x: wd / 6 + lineWidth,     y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 90)", active: false },
@@ -163,32 +170,74 @@ function mouseDragged() {
 
 function playWhat(){
     if(v1){
-        video_1.play();
-        image(video_1, 0, 0, wd / 1.001, hg / 1.001);
+        if(!vidIsPlaying){
+            video_1.pause()
+            // v1= false;
+            
+        }
+        if(vidIsPlaying){
+            video_1.play();
+            image(video_1, 0, 0, wd / 1.001, hg / 1.001);
+        }
+        
+        
     }else{ 
         video_1.stop();
+        
     }
     if(v2){
-        video_2.play();
-        image(video_2, 0, 0, wd / 1.001, hg / 1.001);
+        if(!vidIsPlaying){
+            video_2.pause()
+            // v1= false;
+            
+        }
+        if(vidIsPlaying){
+            video_2.play();
+            image(video_2, 0, 0, wd / 1.001, hg / 1.001);
+        }
+        
     }else{ 
         video_2.stop();
+        
     }
     if(v3){
-        video_3.play();
-        image(video_3, 0, 0, wd / 1.001, hg / 1.001);
+
+        if(!vidIsPlaying){
+            video_3.pause()
+            // v1= false;
+            
+        }
+        if(vidIsPlaying){
+            video_3.play();
+            image(video_3, 0, 0, wd / 1.001, hg / 1.001);
+        }
+        
     }else{
         video_3.stop();
     }
     if(v4){
-        video_4.play();
-        image(video_4, 0, 0, wd / 1.001, hg / 1.001);
+        if(!vidIsPlaying){
+            video_4.pause()
+            // v1= false;
+            
+        }
+        if(vidIsPlaying){
+            video_4.play();
+            image(video_4, 0, 0, wd / 1.001, hg / 1.001);
+        }
     }else{
         video_4.stop();
     }
     if(v5){
-        video_5.play();
-        image(video_5, 0, 0, wd / 1.001, hg / 1.001);
+        if(!vidIsPlaying){
+            video_5.pause()
+            // v1= false;
+            
+        }
+        if(vidIsPlaying){
+            video_5.play();
+            image(video_5, 0, 0, wd / 1.001, hg / 1.001);
+        }
     }else{
         video_5.stop();
     }
@@ -201,14 +250,35 @@ function draw() {
   playWhat();
   timeLine();
   slider();
+  
 }
+
+
+
+
 
 function playVid() { 
     vid.play(); 
   } 
-  
+
+
   function pauseVid() { 
-    vid.pause(); 
+      
   } 
+
+  function playPause(){
+    console.log("pauseeeee playyy");
+    console.log("vidisplayin: "+ vidIsPlaying);
+    if(vidIsPlaying){
+        video_1.pause(); 
+        playButton = createImg("../imagenes/play.png"); 
+        vidIsPlaying=false;
+    }else{
+        vidIsPlaying=true;
+        video_1.play(); 
+
+    }
+    
+  }
 
 
