@@ -28,7 +28,7 @@ function preload() {
     img = loadImage("./descarga.png");
   }
 
-  
+
   
 function setup() {
     background(255, 204, 0);
