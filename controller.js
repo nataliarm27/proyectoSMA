@@ -15,6 +15,8 @@ let v1,v2,v3,v4,v5;
 
 let vidIsPlaying;
 let playButton;
+let prog_bar;
+let your_progress=0;
 
 function preload() {
     video_1 = createVideo(_video_1);
@@ -39,11 +41,15 @@ function setup() {
     // hg=1080;
     vidIsPlaying= true;
    playButton = createImg("imagenes/PausaBotton.png");   
+   prog_bar =  createImg("imagenes/avance_1.png");
    
     wd = displayWidth;
     hg = displayHeight;
     playButton.position(wd/6+10 , hg- 400);
     playButton.mousePressed(playPause);
+    prog_bar.position(wd/6+10 , hg - 850);
+
+
     blocks = [
         { x: wd / 6,                 y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(100, 60, 80)", active: false },
         { x: wd / 6 + lineWidth,     y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 90)", active: false },
@@ -56,7 +62,8 @@ function setup() {
     createCanvas(wd, hg);
     v1 =true;     
     video_1.hide();
-    video_1.loop();
+    // video_1.loop();
+    video_1.play();
 
     video_2.hide();
     // video_2.loop();
@@ -70,7 +77,7 @@ function setup() {
     video_5.hide();
     //video_5.loop();
 
-
+    video_1.onended(progress)   
   }
 
 
@@ -111,7 +118,7 @@ function mousePressed() {
 
 function mouseDragged() {
 	console.log(leverImg.active);
-	if (leverImg.active) {
+	if (leverImg.active || !leverImg.active  ) {
         leverImg.x = mouseX;
         if (blocks.length > 0) {
             // console.log(blocks.length);
@@ -250,7 +257,61 @@ function draw() {
   playWhat();
   timeLine();
   slider();
+
   
+//   if(your_progress==0){
+//     prog_bar = createImg("imagenes/avance_1.png");
+//     prog_bar.position(wd/6+10 , hg - 850);
+
+//   }
+
+      
+//     if(your_progress==1){
+//     prog_bar = createImg("imagenes/avance_2.png");
+//     prog_bar.position(wd/6+10 , hg - 850);
+//     console.log("Avanceee");
+// }
+// if(your_progress==2){
+// prog_bar = createImg("imagenes/avance_3.png");
+// }
+// if(your_progress==3){
+// prog_bar = createImg("imagenes/avance_4.png");
+// }
+// if(your_progress==4){
+// prog_bar = createImg("imagenes/avance_5.png");
+// }
+// if(your_progress==5){
+// prog_bar = createImg("imagenes/avance_5.png");
+// }
+  
+  
+}
+
+
+
+function progress(elt){
+    your_progress++;
+    if(your_progress==1){
+        prog_bar = createImg("imagenes/avance_2.png");
+        prog_bar.position(wd/6+10 , hg - 850);
+        console.log("Avanceee");
+        leverImg.x=leverImg.x + 190;
+    }
+    if(your_progress==2){
+        prog_bar = createImg("imagenes/avance_3.png");
+    }
+    if(your_progress==3){
+        prog_bar = createImg("imagenes/avance_4.png");
+    }
+    if(your_progress==4){
+        prog_bar = createImg("imagenes/avance_5.png");
+    }
+    if(your_progress==5){
+        prog_bar = createImg("imagenes/avance_5.png");
+    }
+    // alert('done playing  vid1' + elt.src);
+    
+    
 }
 
 
@@ -269,6 +330,7 @@ function playVid() {
   function playPause(){
     console.log("pauseeeee playyy");
     console.log("vidisplayin: "+ vidIsPlaying);
+    
     if(vidIsPlaying){
         video_1.pause(); 
         playButton = createImg("imagenes/play.png"); 
