@@ -78,6 +78,10 @@ function setup() {
     //video_5.loop();
 
     video_1.onended(progress)   
+    video_2.onended(progress)
+    video_3.onended(progress)
+    video_4.onended(progress)
+    video_4.onended(progress)
   }
 
 
@@ -118,59 +122,62 @@ function mousePressed() {
 
 function mouseDragged() {
 	console.log(leverImg.active);
-	if (leverImg.active || !leverImg.active  ) {
+	if (leverImg.active   ) {
         leverImg.x = mouseX;
-        if (blocks.length > 0) {
-            // console.log(blocks.length);
-            
-            for (let i = 0; i < blocks.length; i++) {
-                let distance= dist(leverImg.x, leverImg.y, blocks[i].x, blocks[i].y);
-                if(distance<50){
-                    if(i==0){
-                        v1=true;
-                        v2=false;
-                        v3=false;
-                        v4=false;
-                        v5=false;
-                    }
-                    if(i==1){
-                        v1=false;
-                        v2=true;
-                        v3=false;
-                        v4=false;
-                        v5=false;
-                    }
-                    if(i==2){
-                        v1=false;
-                        v2=false;
-                        v3=true;
-                        v4=false;
-                        v5=false;
-                    }
-                    if(i==3){
-                        v1=false;
-                        v2=false;
-                        v3=false;
-                        v4=true;
-                        v5=false;
-
-                    }
-                    if(i==4){
-                        v1=false;
-                        v2=false;
-                        v3=false;
-                        v4=false;
-                        v5=true;
-
-                    }
-                }
-            }
-        }
+        change_escene();
         
 	}
 
   // Prevent default functionality.
   return false;
+}
+function change_escene(){
+    if (blocks.length > 0) {
+        // console.log(blocks.length);
+        
+        for (let i = 0; i < blocks.length; i++) {
+            let distance= dist(leverImg.x, leverImg.y, blocks[i].x, blocks[i].y);
+            if(distance<50){
+                if(i==0){
+                    v1=true;
+                    v2=false;
+                    v3=false;
+                    v4=false;
+                    v5=false;
+                }
+                if(i==1){
+                    v1=false;
+                    v2=true;
+                    v3=false;
+                    v4=false;
+                    v5=false;
+                }
+                if(i==2){
+                    v1=false;
+                    v2=false;
+                    v3=true;
+                    v4=false;
+                    v5=false;
+                }
+                if(i==3){
+                    v1=false;
+                    v2=false;
+                    v3=false;
+                    v4=true;
+                    v5=false;
+
+                }
+                if(i==4){
+                    v1=false;
+                    v2=false;
+                    v3=false;
+                    v4=false;
+                    v5=true;
+
+                }
+            }
+        }
+    }
 }
 
 
@@ -299,16 +306,29 @@ function progress(elt){
     }
     if(your_progress==2){
         prog_bar = createImg("imagenes/avance_3.png");
+        prog_bar.position(wd/6+10 , hg - 850);
+        console.log("Avanceee");
+        leverImg.x=leverImg.x + 190;
     }
     if(your_progress==3){
         prog_bar = createImg("imagenes/avance_4.png");
+        prog_bar.position(wd/6+10 , hg - 850);
+        console.log("Avanceee");
+        leverImg.x=leverImg.x + 190;
     }
     if(your_progress==4){
         prog_bar = createImg("imagenes/avance_5.png");
+        prog_bar.position(wd/6+10 , hg - 850);
+        console.log("Avanceee");
+        leverImg.x=leverImg.x + 190;
     }
     if(your_progress==5){
         prog_bar = createImg("imagenes/avance_5.png");
+        prog_bar.position(wd/6+10 , hg - 850);
+        console.log("Avanceee");
+        leverImg.x=leverImg.x + 190;
     }
+    change_escene();
     // alert('done playing  vid1' + elt.src);
     
     
