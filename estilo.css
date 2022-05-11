@@ -1,6 +1,6 @@
 /*Codigo para el body*/
 body{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     background-position: center; /*posicion*/
     background-repeat: no-repeat; /*evitar que el fondo se repita en su limite*/
     background-size: cover;
@@ -94,16 +94,16 @@ img:hover{
 
 /*Catalogo de vehiculos*/
 #imgpubli{
-    width: 600px;
-    height: 263;
-    border-radius: 5px;
+    width: 60%;
+    
+    border-radius: 3%;
 }
 
 .margcatalogovehi{
     margin-left: 180px;
     margin-right: 180px;
     margin-bottom: 40px; /*Añade un borde o recorde a una img*/
-    box-shadow: 5px 5px 0px rgb(201, 23, 23); /*Crea una sombra con un tamaño y color*/
+    box-shadow: 5px 5px 20px  rgb(201, 23, 23); /*Crea una sombra con un tamaño y color*/
     background:white;
     padding: 20px;
 }
@@ -135,12 +135,14 @@ img:hover{
 }
 
 .colorLink{
-    color: white;
-}    
+    color: rgb(0, 0, 0);
+    margin-top: 1%;
+} 
 
-nav{
-    background: #ff003c;
-    color: white;
-    padding: 20px;
+.volver{
+    width: 4%;
+    margin-left: 1%;
+    margin-top: -1%;
 }
+
 /*Fin de links*/

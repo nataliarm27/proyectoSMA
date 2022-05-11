@@ -30,7 +30,7 @@ function preload() {
     video_5 = createVideo(_video_5);
     video_5.volume(1);
   
-    img = loadImage("descarga.png");
+    img = loadImage("imagenes/petro-caricatura.png");
   }
 
 
@@ -45,13 +45,13 @@ function setup() {
    
     wd = displayWidth;
     hg = displayHeight;
-    playButton.position(wd/6+10 , hg- 400);
+    playButton.position(wd/6+10 , hg- 250);
     playButton.mousePressed(playPause);
-    prog_bar.position(wd/6+10 , hg - 850);
+    prog_bar.position(wd/6+20 , hg -750);
 
 
     blocks = [
-        { x: wd / 6,                 y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(100, 60, 80)", active: false },
+        { x: wd / 6,                 y: hg - 300, width: lineWidth, height: lineHeigh, color: "white", active: false },
         { x: wd / 6 + lineWidth,     y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 90)", active: false },
         { x: wd / 6 + lineWidth * 2, y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 130)", active: false },
         { x: wd / 6 + lineWidth * 3, y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(90, 130, 90)", active: false },

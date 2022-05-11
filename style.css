@@ -18,6 +18,7 @@
     width: 74px;
     height: 74px;
     border-radius: 50%;
+    
 }
 
 .redondo2{
@@ -31,29 +32,43 @@
     
 }
 
+
+
 .facebook{
     position: absolute;
     z-index: 3;
-    margin-top: 25rem;
-    margin-left: 62rem;
+    margin-top: 31%;
+    margin-left: 95%;
     align-items: flex-end;
-    width: 3rem;
+    width: 3.5%;
+    opacity: 80%;
 }
 
 .whatsapp{
     position: absolute;
     z-index: 3;
-    margin-top: 25rem;
-    margin-left: 66rem;
+    margin-top: 41%;
+    margin-left: 95%;
     align-items: flex-end;
-    width: 3rem;
+    width: 3.5%;
+    opacity: 80%;
 }
 
 .twitter{
     position: absolute;
     z-index: 3;
-    margin-top: 25rem;
-    margin-left: 58rem;
+    margin-top: 36%;
+    margin-left: 95%;
     align-items: flex-end;
-    width: 3rem;
+    width: 3.5%;
+    opacity: 80%;
+}
+
+.info{
+    position: absolute;
+    width: 3%;
+    margin-left: 1%;
+    margin-top: 0%;
+    z-index: 3;
+    opacity: 80%;
 }
