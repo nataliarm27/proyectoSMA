@@ -19,7 +19,7 @@ let prog_bar;
 let your_progress=0;
 
 function preload() {
-    video_1 = createVideo(_video_1);
+    video_1 = createVideo(_video_1, );
     video_1.volume(1);
     video_2 = createVideo(_video_2);
     video_2.volume(1);
@@ -31,23 +31,38 @@ function preload() {
     video_5.volume(1);
   
     img = loadImage("imagenes/petro-caricatura.png");
+    
   }
 
 
   
 function setup() {
+
     background(255, 204, 0);
     // wd= 1920;
     // hg=1080;
     vidIsPlaying= true;
-   playButton = createImg("imagenes/PausaBotton.png");   
-   prog_bar =  createImg("imagenes/avance_1.png");
+    playButton = createImg("imagenes/PausaBotton.png");   
+
+    prog_bar_x = null;
+    // prog_bar =  createImg("imagenes/avance_1.png");
+    // prog_bar.position(wd*0 , hg*0.2);
+    prog_bar = document.getElementById("prog_bar");
    
     wd = displayWidth;
     hg = displayHeight;
-    playButton.position(wd/6+10 , hg- 250);
+    createCanvas(wd, hg);
+
+
+    console.log("wd: "+wd + " hg: "+hg)
+
+    playButton.position(wd/9 , hg/1.4);
     playButton.mousePressed(playPause);
-    prog_bar.position(wd/6+20 , hg -750);
+    // prog_bar.position(wd/6+20 , hg -750);
+    
+    
+    // prog_bar.resize(wd, hg);
+    
 
 
     blocks = [
@@ -59,7 +74,7 @@ function setup() {
       ];
     leverImg = {x: wd / 6, y: hg - 300, width: lineWidth, height: lineHeigh, active: false}
 
-    createCanvas(wd, hg);
+    
     v1 =true;     
     video_1.hide();
     // video_1.loop();
@@ -191,7 +206,7 @@ function playWhat(){
         }
         if(vidIsPlaying){
             video_1.play();
-            image(video_1, 0, 0, wd / 1.001, hg / 1.001);
+            image(video_1, 0, 0, wd , hg );//WD HG  = 0 
         }
         
         
@@ -298,36 +313,15 @@ function draw() {
 
 function progress(elt){
     your_progress++;
-    if(your_progress==1){
-        prog_bar = createImg("imagenes/avance_2.png");
-        prog_bar.position(wd/6+10 , hg - 850);
+    if(your_progress<6){
+        // prog_bar = createImg("imagenes/avance_2.png");
+        prog_bar.src="imagenes/avance_"+(your_progress+1)+".png";
+        // prog_bar.position(wd/6+10 , hg - 850);
+        // prog_bar.resize(wd,hg);
         console.log("Avanceee");
         leverImg.x=leverImg.x + 190;
     }
-    if(your_progress==2){
-        prog_bar = createImg("imagenes/avance_3.png");
-        prog_bar.position(wd/6+10 , hg - 850);
-        console.log("Avanceee");
-        leverImg.x=leverImg.x + 190;
-    }
-    if(your_progress==3){
-        prog_bar = createImg("imagenes/avance_4.png");
-        prog_bar.position(wd/6+10 , hg - 850);
-        console.log("Avanceee");
-        leverImg.x=leverImg.x + 190;
-    }
-    if(your_progress==4){
-        prog_bar = createImg("imagenes/avance_5.png");
-        prog_bar.position(wd/6+10 , hg - 850);
-        console.log("Avanceee");
-        leverImg.x=leverImg.x + 190;
-    }
-    if(your_progress==5){
-        prog_bar = createImg("imagenes/avance_5.png");
-        prog_bar.position(wd/6+10 , hg - 850);
-        console.log("Avanceee");
-        leverImg.x=leverImg.x + 190;
-    }
+    
     change_escene();
     // alert('done playing  vid1' + elt.src);
     
@@ -353,7 +347,7 @@ function playVid() {
     
     if(vidIsPlaying){
         video_1.pause(); 
-        playButton = createImg("imagenes/play.png"); 
+        // playButton = createImg("imagenes/play.png"); 
         vidIsPlaying=false;
     }else{
         vidIsPlaying=true;
