@@ -67,7 +67,7 @@ body{
     opacity: 80%;
 }
 
-.info{
+#info{
     position: absolute;
     z-index: 3;
     

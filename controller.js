@@ -7,8 +7,7 @@ const _video_5 = "videos/transporte.mp4";
 let img;
 let video_1;
 let wd, hg;
-let lineWidth = 1000 / 5;
-let lineHeigh = 100;
+
 let blocks;
 let leverImg;
 let v1,v2,v3,v4,v5;
@@ -50,6 +49,7 @@ function setup() {
     prog_bar = document.getElementById("prog_bar");
     pause_btn = document.getElementById("pause_btn");
     pause_btn.addEventListener('click', playPause);
+    info_btn.document.getElementById("info");
    
     wd = displayWidth;
     hg = displayHeight;
@@ -65,6 +65,8 @@ function setup() {
     
     // prog_bar.resize(wd, hg);
     
+    let lineWidth = 1000 / 5;
+let lineHeigh = 100;    
 
 
     blocks = [
