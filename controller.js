@@ -50,6 +50,7 @@ function setup() {
     pause_btn = document.getElementById("pause_btn");
     pause_btn.addEventListener('click', playPause);
     info_btn.document.getElementById("info");
+    info_btn.addEventListener('click', showHelpMessage);
    
     wd = displayWidth;
     hg = displayHeight;
@@ -333,7 +334,20 @@ function progress(elt){
 }
 
 
+function showHelpMessage() {    
+    var divTodo = select("#div-todo"); //Selecciono el div creado con su ID
 
+    if(!helpIsShowed){
+        helpDiv.show(); //Muestro mi div de ayuda que está oculto por defecto
+        divTodo.style("filter", "brightness(80%)"); //Oscurezco el fondo del div donde está todo
+        helpIsShowed = true; //Pongo un true para que no pase por aquí otra vez
+    } else {
+        helpDiv.hide();
+        divTodo.style("filter", "brightness(100%)");
+        helpIsShowed = false;
+    }
+    
+}
 
 
 function playVid() { 
