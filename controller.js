@@ -17,7 +17,12 @@ let playButton;
 let prog_bar;
 let your_progress=0;
 
+let helpDiv;
+let helpIsShowed;
+
 function preload() {
+    // helpDiv = select("#div-help");
+    // helpDiv.hide(); //Se oculta por el momento
     video_1 = createVideo(_video_1, );
     video_1.volume(1);
     video_2 = createVideo(_video_2);
@@ -51,6 +56,12 @@ function setup() {
     pause_btn.addEventListener('click', playPause);
     info_btn.document.getElementById("info");
     info_btn.addEventListener('click', showHelpMessage);
+    //Se especifica el div de la ventana de ayuda
+
+    helpDiv.document.getElementById("div-help");
+   
+    helpIsShowed = false;
+
    
     wd = displayWidth;
     hg = displayHeight;
@@ -67,7 +78,7 @@ function setup() {
     // prog_bar.resize(wd, hg);
     
     let lineWidth = 1000 / 5;
-let lineHeigh = 100;    
+    let lineHeigh = 100;    
 
 
     blocks = [
@@ -335,18 +346,23 @@ function progress(elt){
 
 
 function showHelpMessage() {    
-    var divTodo = select("#div-todo"); //Selecciono el div creado con su ID
+    // var divTodo = select("#div-todo"); //Selecciono el div creado con su ID
 
-    if(!helpIsShowed){
-        helpDiv.show(); //Muestro mi div de ayuda que está oculto por defecto
-        divTodo.style("filter", "brightness(80%)"); //Oscurezco el fondo del div donde está todo
-        helpIsShowed = true; //Pongo un true para que no pase por aquí otra vez
-    } else {
-        helpDiv.hide();
-        divTodo.style("filter", "brightness(100%)");
-        helpIsShowed = false;
-    }
-    
+    // if(!helpIsShowed){
+    //     helpDiv.show(); //Muestro mi div de ayuda que está oculto por defecto
+    //     divTodo.style("filter", "brightness(80%)"); //Oscurezco el fondo del div donde está todo
+    //     helpIsShowed = true; //Pongo un true para que no pase por aquí otra vez
+    // } else {
+    //     helpDiv.hide();
+    //     divTodo.style("filter", "brightness(100%)");
+    //     helpIsShowed = false;
+    // }
+    if (helpDiv.style.display === "none") {
+        helpDiv.style.display = "block";
+      } else {
+        helpDiv.style.display = "none";
+      }
+
 }
 
 
