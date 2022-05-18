@@ -42,12 +42,14 @@ function setup() {
     // wd= 1920;
     // hg=1080;
     vidIsPlaying= true;
-    playButton = createImg("imagenes/PausaBotton.png");   
+    // playButton = createImg("imagenes/PausaBotton.png");   
 
     prog_bar_x = null;
     // prog_bar =  createImg("imagenes/avance_1.png");
     // prog_bar.position(wd*0 , hg*0.2);
     prog_bar = document.getElementById("prog_bar");
+    pause_btn = document.getElementById("pause_btn");
+    pause_btn.addEventListener('click', playPause);
    
     wd = displayWidth;
     hg = displayHeight;
@@ -56,8 +58,8 @@ function setup() {
 
     console.log("wd: "+wd + " hg: "+hg)
 
-    playButton.position(wd/9 , hg/1.4);
-    playButton.mousePressed(playPause);
+    // playButton.position(wd/9 , hg/1.4);
+    // playButton.mousePressed(playPause);
     // prog_bar.position(wd/6+20 , hg -750);
     
     
