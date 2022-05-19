@@ -87,11 +87,11 @@ function setup() {
 
 
     blocks = [
-        { x: wd / 6,                 y: hg/1.7,year:"2012\nAgua potable" , width: lineWidth, height: lineHeigh, color: "white", active: false },
-        { x: wd / 6 + lineWidth,     y: hg/1.7,year: "2012\nArmas", width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 90, 200)", active: false },
-        { x: wd / 6 + lineWidth * 2, y: hg/1.7,year: "2013\nDrogas", width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 130)", active: false },
-        { x: wd / 6 + lineWidth * 3, y: hg/1.7,year: "2013\nTransporte", width: lineWidth, height: lineHeigh, color: "rgb(90, 130, 90)", active: false },
-        { x: wd / 6 + lineWidth * 4, y: hg/1.7,year: "2014\nAnimales", width: lineWidth, height: lineHeigh, color: "rgb(90, 90, 90)", active: false },
+        { x: wd / 6,                 y: hg/1.2,year:"2012\nAgua potable" , width: lineWidth, height: lineHeigh, color: "white", active: false },
+        { x: wd / 6 + lineWidth,     y: hg/1.2,year: "2012\nArmas", width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 90, 200)", active: false },
+        { x: wd / 6 + lineWidth * 2, y: hg/1.2,year: "2013\nDrogas", width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 130)", active: false },
+        { x: wd / 6 + lineWidth * 3, y: hg/1.2,year: "2013\nTransporte", width: lineWidth, height: lineHeigh, color: "rgb(90, 130, 90)", active: false },
+        { x: wd / 6 + lineWidth * 4, y: hg/1.2,year: "2014\nAnimales", width: lineWidth, height: lineHeigh, color: "rgb(90, 90, 90)", active: false },
       ];
     leverImg = {x: wd / 6, y: hg/1.6, width: lineWidth, height: lineHeigh, active: false}
 
@@ -176,7 +176,7 @@ function change_escene(){
         // console.log(blocks.length);
         
         for (let i = 0; i < blocks.length; i++) {
-            let distance= dist(leverImg.x, leverImg.y, blocks[i].x, blocks[i].y);
+            let distance= dist(leverImg.x,blocks[i].y, blocks[i].x, blocks[i].y);
             if(distance<50){
                 if(i==0){
                     v1=true;
