@@ -1,8 +1,9 @@
-const _video_1 = "videos/ActPrev1Full.mp4";
-const _video_2 = "videos/ActPrev2Full.mp4";
-const _video_3 = "videos/ActPrev3Full.mp4";
-const _video_4 = "videos/ActPrev4Full.mp4";
-const _video_5 = "videos/ActPrev5Full.mp4";
+const _video_1 = "videos/agua.mp4";
+const _video_2 = "videos/armas.mp4";
+const _video_3 = "videos/droga.mp4";
+const _video_4 = "videos/transporte.mp4 ";
+
+const _video_5 = "videos/animales.mp4";
 
 let img;
 let video_1;
@@ -21,9 +22,8 @@ let helpDiv;
 let helpIsShowed;
 
 function preload() {
-    // helpDiv = select("#div-help");
-    // helpDiv.hide(); //Se oculta por el momento
-    video_1 = createVideo(_video_1, );
+    
+    video_1 = createVideo(_video_1);
     video_1.volume(1);
     video_2 = createVideo(_video_2);
     video_2.volume(1);
@@ -35,6 +35,7 @@ function preload() {
     video_5.volume(1);
   
     img = loadImage("imagenes/petro2.png");
+    
     
   }
 
@@ -54,11 +55,22 @@ function setup() {
     prog_bar = document.getElementById("prog_bar");
     pause_btn = document.getElementById("pause_btn");
     pause_btn.addEventListener('click', playPause);
+    // info_btn= document.getElementById("info");
+    // info_btn.addEventListener('click', showHelpMessage);
+    //Se especifica el div de la ventana de ayuda
+    
+    // helpDiv.hide(); //Se oculta por el momento
+    // helpDiv.document.getElementById("div-help");
+   
+    helpIsShowed = false;
+
    
     // Tamaño del canvas que contiene los videos y la linea de tiempo
     wd = displayWidth;
     hg = 650;
     createCanvas(wd, hg);
+    // helpDiv = select("#div-help");
+    // helpDiv.style("display", "none");
 
 
     console.log("wd: "+wd + " hg: "+hg)
@@ -75,13 +87,13 @@ function setup() {
 
 
     blocks = [
-        { x: wd / 6,                 y: hg - 125, width: lineWidth, height: lineHeigh, color: "rgb(10, 130, 90,)", active: false },
-        { x: wd / 6 + lineWidth,     y: hg - 125, width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 90)", active: false },
-        { x: wd / 6 + lineWidth * 2, y: hg - 125, width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 130)", active: false },
-        { x: wd / 6 + lineWidth * 3, y: hg - 125, width: lineWidth, height: lineHeigh, color: "rgb(90, 130, 90)", active: false },
-        { x: wd / 6 + lineWidth * 4, y: hg - 125, width: lineWidth, height: lineHeigh, color: "rgb(90, 90, 90)", active: false },
+        { x: wd / 6,                 y: hg/1.7,year:"2012\nAgua potable" , width: lineWidth, height: lineHeigh, color: "white", active: false },
+        { x: wd / 6 + lineWidth,     y: hg/1.7,year: "2012\nArmas", width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 90, 200)", active: false },
+        { x: wd / 6 + lineWidth * 2, y: hg/1.7,year: "2013\nDrogas", width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 130)", active: false },
+        { x: wd / 6 + lineWidth * 3, y: hg/1.7,year: "2013\nTransporte", width: lineWidth, height: lineHeigh, color: "rgb(90, 130, 90)", active: false },
+        { x: wd / 6 + lineWidth * 4, y: hg/1.7,year: "2014\nAnimales", width: lineWidth, height: lineHeigh, color: "rgb(90, 90, 90)", active: false },
       ];
-    leverImg = {x: wd / 6, y: hg - 125, width: lineWidth, height: lineHeigh, active: false}
+    leverImg = {x: wd / 6, y: hg/1.6, width: lineWidth, height: lineHeigh, active: false}
 
     
     v1 =true;     
@@ -101,11 +113,13 @@ function setup() {
     video_5.hide();
     //video_5.loop();
 
-    video_1.onended(progress)   
-    video_2.onended(progress)
-    video_3.onended(progress)
-    video_4.onended(progress)
-    video_4.onended(progress)
+
+    
+    video_1.onended(progress);   
+    video_2.onended(progress);
+    video_3.onended(progress);
+    video_4.onended(progress);
+    video_5.onended(progress);
   }
 
 
@@ -125,7 +139,16 @@ function setup() {
             // cc= rect(block.x, block.y, block.width, block.height);
             // cc.fill(block.color);
     
-        }
+    for (let i = 0; i < blocks.length; i++) {
+        let block = blocks[i];
+        // console.log( blocks[i]);
+        // noStroke();
+        textSize(25);
+        text(block.year, block.x, block.y);
+        fill(0, 102, 153);
+        // cc= rect(block.x, block.y, block.width, block.height);
+        // cc.fill(block.color);
+
     }
   }
 
@@ -149,7 +172,7 @@ function mousePressed() {
 
 function mouseDragged() {
 	console.log(leverImg.active);
-	if (leverImg.active   ) {
+	if (leverImg.active ) {
         leverImg.x = mouseX;
         change_escene();
         
@@ -326,19 +349,66 @@ function draw() {
 function progress(elt){
     your_progress++;
     if(your_progress<6){
+        console.log("video "+your_progress+" completado");
         // prog_bar = createImg("imagenes/avance_2.png");
-        prog_bar.src="imagenes/avance_"+(your_progress+1)+".png";
+        prog_bar.src="imagenes/avance_"+(your_progress)+".png";
         // prog_bar.position(wd/6+10 , hg - 850);
         // prog_bar.resize(wd,hg);
         console.log("Avanceee");
-        leverImg.x=leverImg.x + 190;
+        leverImg.x=leverImg.x + 195;
+        // if(your_progress==6){
+        //     window.location.replace("/credits.html");
+        // }
+        if(your_progress==5){
+            console.log("shit");
+            window.location.replace("/credits.html");
+        }
     }
-    
     change_escene();
     // alert('done playing  vid1' + elt.src);
-    
-    
 }
+
+function creds(elt){
+    console.log("FINNN");
+    window.location.href="/credits.html";
+    // window.location.replace("/credits.html");
+}
+
+
+function showHelpMessage() {    
+    // var divTodo = select("#div-todo"); //Selecciono el div creado con su ID
+
+    // if(!helpIsShowed){
+    //     helpDiv.show(); //Muestro mi div de ayuda que está oculto por defecto
+    //     divTodo.style("filter", "brightness(80%)"); //Oscurezco el fondo del div donde está todo
+    //     helpIsShowed = true; //Pongo un true para que no pase por aquí otra vez
+    // } else {
+    //     helpDiv.hide();
+    //     divTodo.style("filter", "brightness(100%)");
+    //     helpIsShowed = false;
+    // }
+    // if (helpDiv.style.display == "none") {
+    //     helpDiv.style.display = "block";
+    //   } else {
+    //     helpDiv.style.display = "none";
+    //   }
+    // if (!helpIsShowed) {
+    //     helpDiv.style("display", "block");
+    //     helpIsShowed = true;
+    //   } else {
+        helpDiv.style("display", "none");
+        helpIsShowed = false;
+    //   }
+    // if(helpDiv.style.visibility == "hidden"){
+    //     helpDiv.style.visibility = "visible";
+    // }
+    // else{
+    //     helpDiv.style.visibility = "hidden";
+    // }
+    
+
+}
+
 
 function playVid() { 
     vid.play(); 
@@ -352,7 +422,7 @@ function playVid() {
   function playPause(){
     console.log("pauseeeee playyy");
     console.log("vidisplayin: "+ vidIsPlaying);
-    
+
     if(vidIsPlaying){
         video_1.pause(); 
         // playButton = createImg("imagenes/play.png"); 
@@ -363,6 +433,6 @@ function playVid() {
 
     }
     
-  }
+}
 
 
