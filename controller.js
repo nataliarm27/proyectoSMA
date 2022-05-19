@@ -127,18 +127,7 @@ function setup() {
   function timeLine() {
 
     if (blocks.length > 0) {
-        // console.log(blocks.length);
-        
-        for (let i = 0; i < blocks.length; i++) {
-            let block = blocks[i];
-            // console.log( blocks[i]);
-            // noStroke();
-            textSize(32);
-            text('1990', block.x, block.y);
-            fill(0, 102, 153);
-            // cc= rect(block.x, block.y, block.width, block.height);
-            // cc.fill(block.color);
-    
+        // console.log(blocks.length)
     for (let i = 0; i < blocks.length; i++) {
         let block = blocks[i];
         // console.log( blocks[i]);
@@ -151,6 +140,7 @@ function setup() {
 
     }
   }
+}
 
 function slider() {
     let imgi = image(img, leverImg.x, leverImg.y, leverImg.width, leverImg.height);
