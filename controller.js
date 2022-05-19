@@ -1,8 +1,8 @@
-const _video_1 = "videos/actividad-previa-1.mp4";
-const _video_2 = "videos/animales.mp4";
-const _video_3 = "videos/armas.mp4";
-const _video_4 = "videos/droga.mp4";
-const _video_5 = "videos/transporte.mp4";
+const _video_1 = "videos/ActPrev1Full.mp4";
+const _video_2 = "videos/ActPrev2Full.mp4";
+const _video_3 = "videos/ActPrev3Full.mp4";
+const _video_4 = "videos/ActPrev4Full.mp4";
+const _video_5 = "videos/ActPrev5Full.mp4";
 
 let img;
 let video_1;
@@ -34,7 +34,7 @@ function preload() {
     video_5 = createVideo(_video_5);
     video_5.volume(1);
   
-    img = loadImage("imagenes/petro-caricatura.png");
+    img = loadImage("imagenes/petro2.png");
     
   }
 
@@ -54,14 +54,6 @@ function setup() {
     prog_bar = document.getElementById("prog_bar");
     pause_btn = document.getElementById("pause_btn");
     pause_btn.addEventListener('click', playPause);
-    info_btn.document.getElementById("info");
-    info_btn.addEventListener('click', showHelpMessage);
-    //Se especifica el div de la ventana de ayuda
-
-    helpDiv.document.getElementById("div-help");
-   
-    helpIsShowed = false;
-
    
     wd = displayWidth;
     hg = displayHeight;
@@ -343,28 +335,6 @@ function progress(elt){
     
     
 }
-
-
-function showHelpMessage() {    
-    // var divTodo = select("#div-todo"); //Selecciono el div creado con su ID
-
-    // if(!helpIsShowed){
-    //     helpDiv.show(); //Muestro mi div de ayuda que está oculto por defecto
-    //     divTodo.style("filter", "brightness(80%)"); //Oscurezco el fondo del div donde está todo
-    //     helpIsShowed = true; //Pongo un true para que no pase por aquí otra vez
-    // } else {
-    //     helpDiv.hide();
-    //     divTodo.style("filter", "brightness(100%)");
-    //     helpIsShowed = false;
-    // }
-    if (helpDiv.style.display === "none") {
-        helpDiv.style.display = "block";
-      } else {
-        helpDiv.style.display = "none";
-      }
-
-}
-
 
 function playVid() { 
     vid.play(); 
