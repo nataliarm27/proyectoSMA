@@ -55,8 +55,9 @@ function setup() {
     pause_btn = document.getElementById("pause_btn");
     pause_btn.addEventListener('click', playPause);
    
+    // Tamaño del canvas que contiene los videos y la linea de tiempo
     wd = displayWidth;
-    hg = displayHeight;
+    hg = 650;
     createCanvas(wd, hg);
 
 
@@ -68,19 +69,19 @@ function setup() {
     
     
     // prog_bar.resize(wd, hg);
-    
-    let lineWidth = 1000 / 5;
-    let lineHeigh = 100;    
+    //Define el tamaño de la linea de tiempo
+    let lineWidth = 200;
+    let lineHeigh = 90;    
 
 
     blocks = [
-        { x: wd / 6,                 y: hg - 300, width: lineWidth, height: lineHeigh, color: "white", active: false },
-        { x: wd / 6 + lineWidth,     y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 90)", active: false },
-        { x: wd / 6 + lineWidth * 2, y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 130)", active: false },
-        { x: wd / 6 + lineWidth * 3, y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(90, 130, 90)", active: false },
-        { x: wd / 6 + lineWidth * 4, y: hg - 300, width: lineWidth, height: lineHeigh, color: "rgb(90, 90, 90)", active: false },
+        { x: wd / 6,                 y: hg - 125, width: lineWidth, height: lineHeigh, color: "rgb(10, 130, 90,)", active: false },
+        { x: wd / 6 + lineWidth,     y: hg - 125, width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 90)", active: false },
+        { x: wd / 6 + lineWidth * 2, y: hg - 125, width: lineWidth, height: lineHeigh, color: "rgb(130, 130, 130)", active: false },
+        { x: wd / 6 + lineWidth * 3, y: hg - 125, width: lineWidth, height: lineHeigh, color: "rgb(90, 130, 90)", active: false },
+        { x: wd / 6 + lineWidth * 4, y: hg - 125, width: lineWidth, height: lineHeigh, color: "rgb(90, 90, 90)", active: false },
       ];
-    leverImg = {x: wd / 6, y: hg - 300, width: lineWidth, height: lineHeigh, active: false}
+    leverImg = {x: wd / 6, y: hg - 125, width: lineWidth, height: lineHeigh, active: false}
 
     
     v1 =true;     
@@ -109,21 +110,24 @@ function setup() {
 
 
 
-function timeLine() {
+  function timeLine() {
 
-if (blocks.length > 0) {
-    // console.log(blocks.length);
+    if (blocks.length > 0) {
+        // console.log(blocks.length);
+        
+        for (let i = 0; i < blocks.length; i++) {
+            let block = blocks[i];
+            // console.log( blocks[i]);
+            // noStroke();
+            textSize(32);
+            text('1990', block.x, block.y);
+            fill(0, 102, 153);
+            // cc= rect(block.x, block.y, block.width, block.height);
+            // cc.fill(block.color);
     
-    for (let i = 0; i < blocks.length; i++) {
-        let block = blocks[i];
-        // console.log( blocks[i]);
-        // noStroke();
-        fill(block.color);
-        rect(block.x, block.y, block.width, block.height);
+        }
     }
-}
-
-}
+  }
 
 function slider() {
     let imgi = image(img, leverImg.x, leverImg.y, leverImg.width, leverImg.height);

@@ -70,7 +70,7 @@ body{
     position: absolute;
     z-index: 3;
     
-    margin-left: 1%;
+    margin-left: 2%;
     margin-top: 0%;
     width: 4%;
     opacity: 80%;
@@ -78,14 +78,14 @@ body{
 #pause_btn{
     position: absolute;
     z-index: 3;
-    margin-left: 5%;
-    margin-top: 40%;
+    margin-left: 7%;
+    margin-top: 39%;
     width: 5%;
     opacity: 80%;
 }
 #prog_bar{
     display: block;
-    margin-left: 5vw;
+    margin-left: 8%;
     margin-right: auto;
 
     

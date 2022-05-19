@@ -20,13 +20,13 @@ body{
 }
 
 .fondotitle{
-    background: rgb(226, 43, 43); /*background añade un fondo a un elemento en este caso a un titulo*/
+    background: rgb(43, 174, 226); /*background añade un fondo a un elemento en este caso a un titulo*/
     margin-bottom: -20px; /*Genera un margen, en este caso quita el margen al ser -*/
     margin-top: -8px;
 }
 
 .fondosubtitle{
-    background: rgb(226, 43, 43);
+    background: rgb(43, 174, 226);
 }
 /*Fin del codigo para el titulo*/
 
@@ -103,7 +103,7 @@ img:hover{
     margin-left: 180px;
     margin-right: 180px;
     margin-bottom: 40px; /*Añade un borde o recorde a una img*/
-    box-shadow: 5px 5px 20px  rgb(201, 23, 23); /*Crea una sombra con un tamaño y color*/
+    box-shadow: 5px 5px 20px  rgb(43, 174, 226); /*Crea una sombra con un tamaño y color*/
     background:white;
     padding: 20px;
 }
@@ -112,7 +112,7 @@ img:hover{
 
 /*Links*/
 .columtitle{
-    background: #ff003c;
+    background: #00b7ff;
     color: white;
     padding: 20px;
     width: 25%;
